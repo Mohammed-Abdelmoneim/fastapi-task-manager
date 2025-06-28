@@ -1,7 +1,6 @@
 from .db import create_db_and_tables, get_session
 from .models import Task, CreateTask, TaskStatus, TaskPriority, TaskUpdate, TaskResponse
-from fastapi import FastAPI, Depends, Query, HTTPException, status, APIRouter
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Depends, Query, HTTPException, status
 from contextlib import asynccontextmanager
 from sqlmodel import Session, select
 from sqlalchemy import or_
@@ -11,7 +10,7 @@ from typing import Optional
 async def lifespan(app: FastAPI):
     create_db_and_tables()
     yield
-    print('erorr running..')
+    print('error running..')
     
 app = FastAPI(lifespan=lifespan)
 
@@ -43,12 +42,6 @@ def api_health(session: Session = Depends(get_session)):
 
 @app.post("/tasks", response_model=TaskResponse, status_code=status.HTTP_201_CREATED)
 def create_task(task: CreateTask, session: Session = Depends(get_session)):
-        # existing_task = session.exec(select(Task).where(Task.title == task.title)).first()
-        # if existing_task:
-        #     raise HTTPException(
-        #     status_code=400,
-        #     detail="This Task is already exists."
-        # )
         task = Task(
           title=task.title,
           description=task.description,
