@@ -2,10 +2,12 @@ from .db import create_db_and_tables, get_session
 from .models import Task, CreateTask, TaskStatus, TaskPriority, TaskUpdate, TaskResponse
 from fastapi import FastAPI, Depends, Query, HTTPException, status, APIRouter
 from fastapi.responses import JSONResponse
+from contextlib import asynccontextmanager
 from sqlmodel import Session, select
 from sqlalchemy import or_
 from typing import Optional
 
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
     yield
