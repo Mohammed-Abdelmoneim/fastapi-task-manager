@@ -51,10 +51,10 @@ http://localhost:8000/docs
 ```
 
 ## Run Test
-Note: Make sure your FastAPI App is running before executing the <code>tests.py</code>.
+Note: Make sure your FastAPI App is running and <code>pytest</code> is installed before executing the <code>test_tasks.py</code>.
 
 ```bash
-python tests/tests.py
+pytest tests/test_tasks.py
 ```
 ## Example API calls
 
