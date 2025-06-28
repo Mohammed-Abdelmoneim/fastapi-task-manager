@@ -3,7 +3,7 @@ from typing import Optional
 from enum import Enum
 from datetime import datetime, timedelta
 from sqlalchemy import DateTime, func
-from pydantic import field_validator, BaseModel
+from pydantic import field_validator, BaseModel, ConfigDict
 
 class TaskStatus(str, Enum):
     pending = 'pending'
@@ -74,5 +74,4 @@ class TaskResponse(BaseModel):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True 
+    model_config = ConfigDict(from_attributes=True)
