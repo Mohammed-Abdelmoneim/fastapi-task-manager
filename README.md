@@ -5,8 +5,8 @@
 # Task Management API
 <em>A FastAPI-based Task Management API using Pydantic and SQLModel.</em>
 
-<img src="https://img.shields.io/github/last-commit/Mohammed-Abdelmoneim/task-management-api?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/Mohammed-Abdelmoneim/task-management-api?style=default&color=0080ff" alt="repo-top-language">
+<img src="https://img.shields.io/github/last-commit/Mohammed-Abdelmoneim/fastapi-task-manager?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+<img src="https://img.shields.io/github/languages/top/Mohammed-Abdelmoneim/fastapi-task-manager?style=default&color=0080ff" alt="repo-top-language">
 
 </div>
 
